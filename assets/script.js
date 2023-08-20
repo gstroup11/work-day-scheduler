@@ -1,15 +1,30 @@
+//Main function that executes after all html elements load
 $(document).ready(function () {
+  //on click function that saves the users content within text boxes and displays the message saying it has been saved.
   $('.saveBtn').on('click', function () {
 
     var textValue = $(this).siblings('.description').val();
     var time = $(this).parent().attr('id');
 
     localStorage.setItem(time, textValue);
-  })
 
+    //displays localstorage message
+    function showSave(){
+      $('.notification').addClass('show');
+      setTimeout(function () {
+      $('.notification').removeClass('show');
+     }, 3000);
+    }
+
+    showSave();
+  });
+
+  //function that loops over div box hours and compares to current hour
   function hourChecker() {
+    //sets current hour
     var currentHour = dayjs().hour();
 
+    //loop function that compares the two
     $('.time-block').each(function (){
       var blockTime = parseInt($(this).attr('id').split('-')[1]);
 
@@ -24,12 +39,14 @@ $(document).ready(function () {
         $(this).addClass ('future');
       }
     });
-  }
+  };
 
   hourChecker();
 
+  //sets the interval for the hour checker function which is every second
   setInterval(hourChecker, 1000);
 
+  //recalls back to the first function to display the users local storage for each div box
   $('#hour-9 .description').val(localStorage.getItem('hour-9'));
   $('#hour-10 .description').val(localStorage.getItem('hour-10'));
   $('#hour-11 .description').val(localStorage.getItem('hour-11'));
@@ -40,17 +57,6 @@ $(document).ready(function () {
   $('#hour-16 .description').val(localStorage.getItem('hour-16'));
   $('#hour-17 .description').val(localStorage.getItem('hour-17'));
 
+  //displays the current day in the main header
   $('#currentDay').text(dayjs().format('dddd, MMMM D, YYYY'));
 });
-
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
