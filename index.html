@@ -5,106 +5,140 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!--Bootstrap link-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!--font aweseome link-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <!--Google Font link-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <!--CSS Link-->
   <link rel="stylesheet" href="./assets/style.css" />
+  <!--Page title-->
   <title>Work Day Scheduler</title>
 </head>
 
+<!--Start body-->
 <body>
-  <header class="p-5 mb-4">
+  <!--Start top of page heading-->
+  <header class="p-5 mb-4 border-5 border-bottom border-dark text-center">
     <h1 class="display-3">Work Day Scheduler</h1>
     <p class="lead">A simple calendar app for scheduling your work day</p>
     <p id="currentDay" class="lead"></p>
   </header>
+  <!--End top of page heading-->
 
+  <!--start hidden display message-->
   <section class="text-center notification" id="notify">
     Appointment Added to <code>localStorage</code> ✔️
   </section>
+  <!--end hidden display message-->
 
-  <div class="container-lg px-5">
+  <!--start work planner div-->
+  <div class="container-fluid px-5">
+    <!--Start 9am div-->
     <div id="hour-9" class="row time-block ">
-      <div class="col-2 col-md-1 hour text-center py-3">9AM</div>
+      <div class="col-2 col-md-1 hour text-center py-3">9 AM</div>
       <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
       <button class="btn saveBtn col-2 col-md-1" aria-label="save">
         <i class="fas fa-save" aria-hidden="true"></i>
       </button>
     </div>
+    <!--End 9am div-->
 
+    <!--Start 10am div-->
     <div id="hour-10" class="row time-block ">
-      <div class="col-2 col-md-1 hour text-center py-3">10AM</div>
+      <div class="col-2 col-md-1 hour text-center py-3">10 AM</div>
       <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
       <button class="btn saveBtn col-2 col-md-1" aria-label="save">
         <i class="fas fa-save" aria-hidden="true"></i>
       </button>
     </div>
+    <!--End 10am div-->
 
+    <!--Start 11am div-->
     <div id="hour-11" class="row time-block ">
-      <div class="col-2 col-md-1 hour text-center py-3">11AM</div>
+      <div class="col-2 col-md-1 hour text-center py-3">11 AM</div>
       <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
       <button class="btn saveBtn col-2 col-md-1" aria-label="save">
         <i class="fas fa-save" aria-hidden="true"></i>
       </button>
     </div>
+    <!--End 11am div-->
 
+    <!--Start 12pm div-->
     <div id="hour-12" class="row time-block ">
-      <div class="col-2 col-md-1 hour text-center py-3">12PM</div>
+      <div class="col-2 col-md-1 hour text-center py-3">12 PM</div>
       <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
       <button class="btn saveBtn col-2 col-md-1" aria-label="save">
         <i class="fas fa-save" aria-hidden="true"></i>
       </button>
     </div>
+    <!--End 12pm div-->
 
+    <!--Start 1pm div-->
     <div id="hour-13" class="row time-block ">
-      <div class="col-2 col-md-1 hour text-center py-3">1PM</div>
+      <div class="col-2 col-md-1 hour text-center py-3">1 PM</div>
       <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
       <button class="btn saveBtn col-2 col-md-1" aria-label="save">
         <i class="fas fa-save" aria-hidden="true"></i>
       </button>
     </div>
+    <!--End 1pm div-->
 
+    <!--Start 2pm div-->
     <div id="hour-14" class="row time-block ">
-      <div class="col-2 col-md-1 hour text-center py-3">2PM</div>
+      <div class="col-2 col-md-1 hour text-center py-3">2 PM</div>
       <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
       <button class="btn saveBtn col-2 col-md-1" aria-label="save">
         <i class="fas fa-save" aria-hidden="true"></i>
       </button>
     </div>
+    <!--End 2pm div-->
 
+    <!--Start 3pm div-->
     <div id="hour-15" class="row time-block ">
-      <div class="col-2 col-md-1 hour text-center py-3">3PM</div>
+      <div class="col-2 col-md-1 hour text-center py-3">3 PM</div>
       <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
       <button class="btn saveBtn col-2 col-md-1" aria-label="save">
         <i class="fas fa-save" aria-hidden="true"></i>
       </button>
     </div>
+    <!--End 3pm div-->
 
+    <!--Start 4pm div-->
     <div id="hour-16" class="row time-block ">
-      <div class="col-2 col-md-1 hour text-center py-3">4PM</div>
+      <div class="col-2 col-md-1 hour text-center py-3">4 PM</div>
       <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
       <button class="btn saveBtn col-2 col-md-1" aria-label="save">
         <i class="fas fa-save" aria-hidden="true"></i>
       </button>
     </div>
+    <!--End 4pm div-->
 
+    <!--Start 5pm div-->
     <div id="hour-17" class="row time-block ">
-      <div class="col-2 col-md-1 hour text-center py-3">5PM</div>
+      <div class="col-2 col-md-1 hour text-center py-3">5 PM</div>
       <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
       <button class="btn saveBtn col-2 col-md-1" aria-label="save">
         <i class="fas fa-save" aria-hidden="true"></i>
       </button>
     </div>
+    <!--End 5pm div-->
   </div>
+  <!--End work planner div-->
 
+  <!--Jquery Library Link-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--dayjs link-->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-
+    <!--Script.js link-->
   <script src="./assets/script.js"></script>
 
 </body>
-
+<!--End body-->
 </html>
